@@ -910,8 +910,8 @@ import UIKit
     *  @param hopperId:  (required) Hopper Id
     *  @param positionId:  (required) Position Ids
     */
-    public static func splitOnePosition(hopperId : String,positionId : Int,completion: @escaping (Result<String?, Error>) -> Void) {
-        HopperAPISplitOnePositionRequest.init(hopperId: hopperId, positionId: positionId).request { (data) in
+    public static func splitOnePosition(hopperId : String,positionId : Int, percentage : String,completion: @escaping (Result<String?, Error>) -> Void) {
+        HopperAPISplitOnePositionRequest.init(hopperId: hopperId, positionId: positionId, percentage: percentage).request { (data) in
             completion(.success(data.data))
         } _: { (err) in
             completion(.failure(err))

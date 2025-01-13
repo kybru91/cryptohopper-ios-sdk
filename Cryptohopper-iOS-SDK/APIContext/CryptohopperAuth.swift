@@ -115,8 +115,8 @@ import UIKit
      * @discussion Device authorization revoke device
      *
      */
-    public static func authDeviceRevoke(deviceId: String,completion: @escaping (Result<String, Error>) -> Void) {
-        HopperAPIAuthDeviceRevokeRequest.init(deviceId: deviceId).request { (response) in
+    public static func authDeviceRevoke(deviceId: String, secret : String, completion: @escaping (Result<String, Error>) -> Void) {
+        HopperAPIAuthDeviceRevokeRequest.init(deviceId: deviceId, secret: secret).request { (response) in
             completion(.success(response.message ?? ""))
         } _: { (err) in
             completion(.failure(err))

@@ -136,8 +136,10 @@ public class HopperConfig : Codable {
     public var advanced_ta_macd_necessary : String?
     public var advanced_ta_kama_necessary : String?
     public var stop_loss : String?
-    public var stop_loss_percentage : String?
-    public var trailing_buy : String?
+    public var stop_loss_percentage: String?
+    public var stop_loss_timeout_val: String?
+    public var stop_loss_timeout_count: String?
+    public var trailing_buy: String?
     public var stop_loss_trailing : String?
     public var stop_loss_trailing_percentage : String?
     public var stop_loss_trailing_arm : String?
@@ -145,6 +147,8 @@ public class HopperConfig : Codable {
     public var trailing_stop_loss_reset : String?
     public var trailing_stop_loss_profit : String?
     public var trailing_buy_percentage : String?
+    public var trailing_stop_loss_timeout_val : String?
+    public var trailing_stop_loss_timeout_count : String?
     public var short_reset_position : String?
     public var short_restore_position : String?
     public var automatic_shorting : String?
@@ -325,6 +329,8 @@ public class HopperConfig : Codable {
             case advanced_ta_kama_necessary = "advanced_ta_kama_necessary"
             case stop_loss = "stop_loss"
             case stop_loss_percentage = "stop_loss_percentage"
+            case stop_loss_timeout_val = "stop_loss_timeout_val"
+            case stop_loss_timeout_count = "stop_loss_timeout_count"
             case trailing_buy = "trailing_buy"
             case stop_loss_trailing = "stop_loss_trailing"
             case stop_loss_trailing_percentage = "stop_loss_trailing_percentage"
@@ -333,6 +339,8 @@ public class HopperConfig : Codable {
             case trailing_stop_loss_reset = "trailing_stop_loss_reset"
             case trailing_stop_loss_profit = "trailing_stop_loss_profit"
             case trailing_buy_percentage = "trailing_buy_percentage"
+            case trailing_stop_loss_timeout_val = "trailing_stop_loss_timeout_val"
+            case trailing_stop_loss_timeout_count = "trailing_stop_loss_timeout_count"
             case short_reset_position = "short_reset_position"
             case short_restore_position = "short_restore_position"
             case automatic_shorting = "automatic_shorting"

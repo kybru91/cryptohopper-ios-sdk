@@ -10,9 +10,10 @@ import UIKit
 
 class HopperAPIAuthDeviceRevokeRequest: HopperAPIRequest<HopperCommonMessageResponse> {
     
-    convenience init(deviceId : String) {
+    convenience init(deviceId : String, secret : String) {
         self.init()
         self.changeUrlPath(path:"/v1" + "/device/\(deviceId)/revoke")
+        addQueryItem(name: "secret", value: secret)
     }
     
     override var httpMethod: HopperAPIHttpMethod {

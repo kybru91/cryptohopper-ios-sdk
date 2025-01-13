@@ -10,9 +10,13 @@ import UIKit
 
 class HopperAPISplitOnePositionRequest: HopperAPIRequest<HopperCommonMessageResponse> {
     
-    convenience init(hopperId : String,positionId : Int) {
+    convenience init(hopperId : String,positionId : Int, percentage : String?) {
         self.init()
         self.changeUrlPath(path: "/v1" + "/hopper/\(hopperId)/position/split/\(positionId)")
+        
+        if(percentage != nil){
+            addBodyItem(name: "percentage", value: (percentage ?? ""))
+        }
     }
     
     override var httpMethod: HopperAPIHttpMethod {
